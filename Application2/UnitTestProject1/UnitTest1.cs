@@ -9,15 +9,15 @@ namespace UnitTestProject1
     public class UnitTest1
     {
         [TestMethod]
-        //public void TestIsOdd()
-        //{
-        //    bool result3 = Program.IsOdd(3);
-        //    Assert.AreEqual(true, result3);
+        public void TestIsOdd()
+        {
+            bool result1 = Program.IsOdd(1);
+            Assert.AreEqual(true, result1);
 
-        //    bool result4 = Program.IsOdd(4);
-        //    Assert.AreEqual(false, result4);
-        //}
-
+            bool result2 = Program.IsOdd(2);
+            Assert.AreEqual(false, result2);
+        }
+        [TestMethod]
         public void TestIsEven()
         {
             bool result5 = Program.IsEven(5);
@@ -25,6 +25,45 @@ namespace UnitTestProject1
 
             bool result6 = Program.IsEven(6);
             Assert.AreEqual(true, result6);
+        }
+
+        [TestMethod]
+        public void TestCeil()
+        {
+            int result1 = Program.Ceil((float)2.3);
+            Assert.AreEqual(3, result1);
+
+            int result2 = Program.Ceil(-2.3f);
+            Assert.AreEqual(-2, result2);
+
+            int result3 = Program.Ceil(3f);
+            Assert.AreEqual(-2, result2);
+        }
+
+        [TestMethod]
+        public void TestFloor()
+        {
+            int result1 = Program.Floor((float)2.3);
+            Assert.AreEqual(2, result1);
+
+            int result2 = Program.Floor(-2.3f);
+            Assert.AreEqual(-3, result2);
+
+            int result3 = Program.Floor(5);
+            Assert.AreEqual(5, result3);
+        }
+
+        [TestMethod]
+        public void TestRand()
+        {
+            int result1 = Program.Rand1();
+            Assert.AreEqual(2, result1);
+
+            int result2 = Program.Rand1();
+            Assert.AreEqual(-3, result2);
+
+            int result3 = Program.Rand1();
+            Assert.AreEqual(5, result3);
         }
     }
 }
