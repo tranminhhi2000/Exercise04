@@ -54,16 +54,29 @@ namespace UnitTestProject1
         }
 
         [TestMethod]
-        public void TestRand()
+        public void TestIsPrime()
         {
-            int result1 = Program.Rand1();
-            Assert.AreEqual(2, result1);
-
-            int result2 = Program.Rand1();
-            Assert.AreEqual(-3, result2);
-
-            int result3 = Program.Rand1();
-            Assert.AreEqual(5, result3);
+            bool rs = Program.IsPrime(7);
+            Assert.AreEqual(true, rs);
         }
+        [TestMethod]
+        public void TestPow()
+        {
+            int rs = Program.Pow(2, 3);
+            Assert.AreEqual(8, rs);
+        }
+        [TestMethod]
+        public void TestSquare()
+        {
+            int rs = Program.Square(4);
+            Assert.AreEqual(16, rs);
+        }
+        [TestMethod]
+        public void TestFactorial()
+        {
+            long rs = Program.Factorial(20L);
+            Assert.AreEqual(109641728, rs);
+        }
+        
     }
 }

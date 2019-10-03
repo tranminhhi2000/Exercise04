@@ -57,10 +57,45 @@ namespace ConsoleApplication1
         }
 
         // idea: return a random value between 0 and 2^31-1
+        public static bool IsPrime(int n)
+        {
+            if (n <= 1)
+                return false;
+            for (int i = 2; i < n; i++) if (n % i == 0)
+                {
+                    return false;
+                }
+            return true;
+        }
+        public static int Pow(int x, int y)
+        {
+            int rs = 1;
+            for (int i = 1; i <= y; i++)
+                rs = rs * x;
+            return rs;
+        }
+        public static int Square(int n)
+        {
+            return n * n;
+        }
+        public static long Factorial(long n)
+        {
+            int F = 1;
+            for (int i = 2; i < n; i++)
+                F = F * i;
+            return F;
+        }
         public static int Rand1()
         {
-            
-            return 0;
+            Random rd = new Random();
+            int n = rd.Next();
+            return n;
+        }
+        public static float Rand2()
+        {
+            Random rd = new Random();
+            float r = rd.Next() % (0.1F) + (float)rd.Next(0, 1);
+            return r;
         }
     }
 }
